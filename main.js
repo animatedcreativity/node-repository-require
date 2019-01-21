@@ -81,7 +81,7 @@ module.exports = exports = function(config) {
         var changed = false;
         for (var key in repoJson.data.dependencies) {
           var module = key + "@" + repoJson.data.dependencies[key];
-          if (json.data[key] != repoJson.data[key]) {
+          if (json.data.dependencies[key] != repoJson.data.dependencies[key]) {
             if (config.consoleLog === true) console.log("node-repository: adding dependency: " + module);
             json.data.dependencies[key] = repoJson.data.dependencies[key];
             changed = true;
