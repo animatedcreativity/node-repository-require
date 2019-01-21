@@ -1,4 +1,4 @@
-# node-repository
+# node-repository-require
 Install a Node.js module from any public/private repository easily.
 
 ---------------------------------------------------
@@ -22,7 +22,7 @@ Why the module was made?<br/>
 
 Create installer with optional config, it will use defaults if not provided.
 ```
-var nodeRepository = require("node-repository");
+var nodeRepository = require("node-repository-require");
 var installer = new nodeRepository({consoleLog: true});
 ```
 

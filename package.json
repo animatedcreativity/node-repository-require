@@ -1,5 +1,5 @@
 {
-  "name": "node-repository",
+  "name": "node-repository-require",
   "version": "0.0.1",
   "description": "Install a Node.js module from any public/private repository easily.",
   "main": "main.js",
@@ -16,13 +16,16 @@
     "node": "8.x"
   },
   "repository": {
-    "url": "https://github.com/animatedcreativity/node-repository"
+    "url": "https://github.com/animatedcreativity/node-repository-require"
   },
   "license": "MIT",
   "keywords": [
     "node",
     "repository",
     "github",
-    "install"
+    "install",
+    "require",
+    "dependencies",
+    "module"
   ]
 }
