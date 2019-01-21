@@ -36,6 +36,8 @@ Run npm update in console just one time once you have required a new module from
 npm update
 ```
 
+If you are using this module on Glitch.com, then just run `refresh` in the console.
+
 Check if the module was installed
 ```
 installer.require("module-name", "https://<github_token>:x-oauth-basic@github.com/<user>/<module_name>.git")
