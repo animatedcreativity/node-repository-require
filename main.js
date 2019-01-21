@@ -33,7 +33,8 @@ module.exports = exports = function(config) {
       return false;
     },
     path: function(name) {
-      return __dirname + "/node_modules/" + name;
+      var path = require('path');
+      return path.dirname(require.main.filename) + "/node_modules/" + name;
     },
     version: function(name) {
       var version = "";
