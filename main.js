@@ -73,11 +73,8 @@ module.exports = exports = function(config) {
         var path = installer.path(name);
         var repoJson = new fileJson();
         repoJson.load(path + "/package.json");
-        console.log(repoJson.data);
         var json = new fileJson();
-        console.log(installer.root());
         json.load(installer.root() + "/package.json");
-        console.log(json.data);
         var changed = false;
         for (var key in repoJson.data.dependencies) {
           var module = key + "@" + repoJson.data.dependencies[key];
