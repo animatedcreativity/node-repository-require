@@ -75,6 +75,7 @@ module.exports = exports = function(config) {
         repoJson.load(path + "/package.json");
         console.log(repoJson.data);
         var json = new fileJson();
+        console.log(installer.root());
         json.load(installer.root() + "/package.json");
         console.log(json.data);
         var changed = false;
