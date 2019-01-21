@@ -32,9 +32,12 @@ module.exports = exports = function(config) {
       }
       return false;
     },
-    path: function(name) {
+    root: function() {
       var path = require('path');
-      return path.dirname(require.main.filename) + "/node_modules/" + name;
+      return path.dirname(require.main.filename);
+    },
+    path: function(name) {
+      return installer.root() + "/node_modules/" + name;
     },
     version: function(name) {
       var version = "";
@@ -71,7 +74,7 @@ module.exports = exports = function(config) {
         var repoJson = new fileJson();
         repoJson.load(path + "/package.json");
         var json = new fileJson();
-        json.load("./package.json");
+        json.load(installer.root() + "/package.json");
         var changed = false;
         for (var key in repoJson.data.dependencies) {
           var module = key + "@" + repoJson.data.dependencies[key];
