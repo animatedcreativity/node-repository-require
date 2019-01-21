@@ -1,0 +1,28 @@
+{
+  "name": "node-repository",
+  "version": "0.0.1",
+  "description": "Install a Node.js module from any public/private repository easily.",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "nodegit": "^0.24.0",
+    "rimraf": "^2.6.3",
+    "node-file-json": "^0.0.8",
+    "node-sanitize-options": "^0.0.4"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://github.com/animatedcreativity/node-repository"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "repository",
+    "github",
+    "install"
+  ]
+}
