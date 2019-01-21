@@ -66,5 +66,5 @@ shrinkwrap.yaml
 .glitch-assets
 .nano
 ip.sh
-database.json
+database.nosql
 store.json
