@@ -38,12 +38,11 @@ npm update
 
 Check if the module was installed
 ```
-var installer = new exports();
 installer.require("module-name", "https://<github_token>:x-oauth-basic@github.com/<user>/<module_name>.git")
-  .then(function(result) {
-    var module = require("module-name");
-    // do something with module
-  });
+.then(function(result) {
+  var module = require("module-name");
+  // do something with module
+});
 ```
 
 ---------------------------------------------------
