@@ -1,9 +1,9 @@
 # node-repository-require
-Install a Node.js module from any public/private repository easily.
+Install any public/private repository (even a node module) easily in node_modules folder, on the go.
 
 ---------------------------------------------------
 
-**NOTE:** If you include public/private git links in package.json dependencies, they will also work by default without this module, and will be installed by `npm update`.
+**NOTE:** If you include public/private git links in package.json dependencies, they will also work by default without this module, and will be installed by `npm update`. _But, its better to use this module if the repository is not a npm module._
 
 ---------------------------------------------------
 
@@ -28,7 +28,7 @@ var installer = new nodeRepository({consoleLog: true});
 
 Require module
 ```
-var result = installer.require("module-name", "https://<github_token>:x-oauth-basic@github.com/<user>/<module_name>.git");
+installer.require("module-name", "https://<github_token>:x-oauth-basic@github.com/<user>/<module_name>.git");
 ```
 
 Run npm update in console just one time once you have required a new module from repository. This is because once the module is downloaded, its dependencies are added in package.json
@@ -36,7 +36,8 @@ Run npm update in console just one time once you have required a new module from
 npm update
 ```
 
-If you are using this module on Glitch.com, then just run `refresh` in the console.
+If you are using this module on Glitch.com, then just run `refresh` in the console.<br/>
+**If the repository is not a npm module, then no need to do `npm update`.**
 
 Check if the module was installed
 ```
