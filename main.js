@@ -1,16 +1,26 @@
 module.exports = exports = function(config) {
   var sanitize = require("node-sanitize-options");
+  var request = require("request");
   config = sanitize.options(config, {
-    consoleLog: true
+    consoleLog: true,
+    versionCheck: true
   });
   var fs = require("fs");
   var rimraf = require("rimraf");
   var fileJson = require("node-file-json");
   var installer = {
-    require: function(name, link, forceReinstall) {
-      return new Promise(function(resolve, reject) {
+    wrapper: require("node-promise-wrapper"),
+    status: require("./status.js"),
+    require: function(name, link, forceReinstall, installVersion) {
+      return new Promise(async function(resolve, reject) {
         var result = "";
-        if (!installer.exists(name) || forceReinstall === true) {
+        var exists = true;
+        if (!installer.exists(name) || forceReinstall === true) exists = false;
+        if (exists === true && typeof installVersion !== "undefined") {
+          var version = installer.version(name);
+          if (version !== installVersion) exists = false;
+        }
+        if (exists === false) {
           var path = installer.path(name);
           rimraf.sync(path);
           installer.install(name, link).then(function(message) {
