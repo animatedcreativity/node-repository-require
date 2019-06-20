@@ -1,18 +1,18 @@
 {
   "name": "node-repository-require",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Install a Node.js module from any public/private repository easily.",
   "main": "main.js",
   "scripts": {
     "start": "node main.js"
   },
   "dependencies": {
-    "nodegit": "^0.24.3",
     "rimraf": "^2.6.3",
     "node-file-json": "^0.0.8",
     "node-sanitize-options": "^0.0.6",
     "request": "^2.88.0",
-    "node-promise-wrapper": "^0.0.2"
+    "node-promise-wrapper": "^0.0.2",
+    "simple-git": "^1.116.0"
   },
   "engines": {
     "node": "8.x"

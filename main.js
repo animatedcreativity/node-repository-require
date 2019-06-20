@@ -74,8 +74,8 @@ module.exports = exports = function(config) {
       return new Promise(function(resolve, reject) {
         var path = installer.path(name);
         if (!fs.existsSync(path)) {
-          var git = require("nodegit");
-          git.Clone(link, path).then(function(repository) {
+          var git = require("simple-git/promise")();
+          git.clone(link, path).then(function(repository) {
             installer.addDependencies(name);
             if (config.consoleLog === true) console.log("node-repository: module: " + name + "@" + installer.version(name) + " installed, do not forget to run (npm update) in project root");
             resolve({status: true, message: "Installed", repository: repository});
