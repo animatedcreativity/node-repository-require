@@ -11,6 +11,16 @@ module.exports = exports = function(config) {
   var installer = {
     wrapper: require("node-promise-wrapper"),
     status: require("./status.js"),
+    auto: async function(options) {
+      if (options.token === "undefined") {
+        console.log("node-repository-require: Auto needs Github token to work.");
+        return false;
+      }
+      for (var name in options.modules) {
+        var module = options.modules[name];
+        await installer.require(name, module.link, module.force, module.version);
+      }
+    },
     require: function(name, link, forceReinstall, installVersion) {
       return new Promise(async function(resolve, reject) {
         var result = "";
