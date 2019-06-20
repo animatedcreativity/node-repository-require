@@ -12,13 +12,14 @@ module.exports = exports = function(config) {
     wrapper: require("node-promise-wrapper"),
     status: require("./status.js"),
     auto: async function(options) {
-      if (options.token === "undefined") {
-        console.log("node-repository-require: Auto needs Github token to work.");
+      if (options.token === "undefined" || options.user === "undefined") {
+        console.log("node-repository-require: Auto needs Github user & token to work.");
         return false;
       }
       for (var name in options.modules) {
         var module = options.modules[name];
-        await installer.require(name, module.link, module.force, module.version);
+        var link = "https://" + options.token + ":x-oauth-basic@github.com/" + options.user + "/" + name + ".git";
+        await installer.require(name, link, module.force, module.version);
       }
     },
     require: function(name, link, forceReinstall, installVersion) {

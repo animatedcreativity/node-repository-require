@@ -42,19 +42,17 @@ var nodeRepository = require("node-repository-require");
 var installer = new nodeRepository({consoleLog: true});
 installer.auto({
   token: "<github_token>",
+  user: "<github_user>",
   modules: {
     "module-1": {
-      link: "<git_repository_link_1>",
       force: false,
       version: "<module_version>"
     },
     "module-2": {
-      link: "<git_repository_link_2>",
       force: false,
       version: "<module_version>"
     },
     "module-3": {
-      link: "<git_repository_link_3>",
       force: false,
       version: "<module_version>"
     }
