@@ -58,6 +58,18 @@ installer.auto({
     }
   }
 });
+
+OR
+
+installer.auto({
+  token: "<github_token>",
+  user: "<github_user>",
+  modules: {
+    "module-1": "<module_version>"
+    "module-2": "<module_version>"
+    "module-3": "<module_version>"
+  }
+});
 ```
 
 If you are using this module on Glitch.com, then just run `refresh` in the console.<br/>

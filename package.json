@@ -1,6 +1,6 @@
 {
   "name": "node-repository-require",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Install a Node.js module from any public/private repository easily.",
   "main": "main.js",
   "scripts": {

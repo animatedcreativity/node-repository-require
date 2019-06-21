@@ -18,6 +18,12 @@ module.exports = exports = function(config) {
       }
       for (var name in options.modules) {
         var module = options.modules[name];
+        var oModule = module;
+        if (typeof module === "string") {
+          module = {
+            version: oModule
+          };
+        }
         var link = "https://" + options.token + ":x-oauth-basic@github.com/" + options.user + "/" + name + ".git";
         await installer.require(name, link, module.force, module.version);
       }
